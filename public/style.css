@@ -1,0 +1,139 @@
+/* General Styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    flex-direction: column;  /* Make sure all content is vertically aligned */
+    color: #333;
+  }
+  
+  h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Board Styling */
+  .board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    gap: 15px;
+    margin-top: 40px;
+    justify-content: center;
+  }
+  
+  .cell {
+    width: 100px;
+    height: 100px;
+    background-color: #ffffff;
+    border: none;
+    font-size: 3rem;
+    color: #333;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+  }
+  
+  /* Hover and Active Effects */
+  .cell:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.1);
+  }
+  
+  .cell:active {
+    background-color: #dcdcdc;
+  }
+  
+  /* Player Colors */
+  .x {
+    color: #e74c3c; /* Red for X */
+  }
+  
+  .o {
+    color: #3498db; /* Blue for O */
+  }
+  
+  /* Game Over Alert */
+  .alert {
+    font-size: 2rem;
+    padding: 10px;
+    margin: 10px;
+    background-color: #f1c40f;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 5px;
+    animation: fadeIn 2s ease-out;
+  }
+  
+  /* Add animation for the alert */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  /* Media Queries for Mobile Responsiveness */
+  
+  /* Smaller Screens */
+  @media (max-width: 768px) {
+    body {
+      padding: 20px;
+    }
+  
+    h1 {
+      font-size: 3rem;
+    }
+  
+    #status {
+      font-size: 1.2rem;
+    }
+  
+    .board {
+      grid-template-columns: repeat(3, 90px);
+      gap: 12px;
+    }
+  
+    .cell {
+      width: 90px;
+      height: 90px;
+      font-size: 2.5rem;
+    }
+  }
+  
+  /* Very Small Screens (like mobile phones in portrait mode) */
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 2.5rem;
+    }
+  
+    #status {
+      font-size: 1rem;
+    }
+  
+    .board {
+      grid-template-columns: repeat(3, 80px);
+      gap: 8px;
+    }
+  
+    .cell {
+      width: 80px;
+      height: 80px;
+      font-size: 2rem;
+    }
+  }
+  
