@@ -33,12 +33,15 @@ socket.on("move-made", ({ index, symbol: moveSymbol }) => {
 
 socket.on("game-over", ({ winner }) => {
   if (winner === "draw") {
-    alert("It's a draw!");
-  } else if (winner === symbol) {
-    alert("You win!");
-  } else {
-    alert("You lose!");
-  }
+  alert("It's a draw!");
+  window.location.reload();
+} else if (winner === symbol) {
+  alert("You win!");
+  window.location.reload();
+} else {
+  alert("You lose!");
+  window.location.reload();
+}
   board.querySelectorAll(".cell").forEach(cell => cell.textContent = "");
   myTurn = (symbol === "X"); // Reset turns
 });
