@@ -40,7 +40,7 @@ socket.on("game-over", ({ winner }) => {
   window.location.reload();
 } else {
   alert("You lose!");
-  
+  window.location.reload();
 }
   board.querySelectorAll(".cell").forEach(cell => cell.textContent = "");
   myTurn = (symbol === "X"); // Reset turns
